@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShadowBall</title>
     <style>
-        *{
-            box-sizing: border-box;
-        }
-    	body{ padding: 0; margin: 1; }
+        
+        
+    	body{ padding: 0; margin: 1 0; }
         .contenedor{
-            margin-top: 5px; 
+            margin-top: 1px; 
         }
-        #myCanvas { background: rgb(7, 0, 0); display: block; margin: 0; top:0px;}
+        #myCanvas { background: rgb(7, 0, 0); display: block; margin-top: 1px ; top:1px;}
         @media (max-width:500px) {
             #myCanvas{
                 width: 360px;
@@ -55,23 +54,32 @@
             background-color: chartreuse;
             font-size: medium;
             color: black;
+            cursor: grab;
         }
         #titulo{
+            height: 100px;
+            width: 200px;
             position: absolute;
             align-content:space-between;
             align-items: center;
+            justify-content: center;
+            margin-top: 200px;
             margin-left: 60px;
+            padding-bottom: 0px;
+            padding-top: 40px;
         }
         #titulo:hover{
-            
-            box-shadow: inset 15px 15px 15px rgba(12, 233, 12, 0.333);
+            border-radius: 20%;
+            color:rgba(192, 192, 192, 0.651);
+            box-shadow: inset 18px 18px 18px 18px rgba(82, 247, 82, 0.397);
         }
     </style>
 </head>
 <body>
     <div class="contenedor">
-        <h1 id="titulo">Shadow Ball</h1>
+       
         <button id="inicio" onclick="newGame()">Start</button>
+        <h1 id="titulo">Shadow Ball</h1>
         <canvas id="myCanvas" width="650" height="500"></canvas>
         <span id ="hit"></span>
         <span id ="danger"></span>
