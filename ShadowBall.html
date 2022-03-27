@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShadowBall</title>
     <style>
         *{
             box-sizing: border-box;
         }
-    	body{ padding: 0; margin: 2; }
+    	body{ padding: 0; margin: 1; }
+        .contenedor{
+            margin-top: 5px; 
+        }
         #myCanvas { background: rgb(7, 0, 0); display: block; margin: 0; top:0px;}
         @media (max-width:500px) {
             #myCanvas{
@@ -51,13 +56,26 @@
             font-size: medium;
             color: black;
         }
+        #titulo{
+            position: absolute;
+            align-content:space-between;
+            align-items: center;
+            margin-left: 60px;
+        }
+        #titulo:hover{
+            
+            box-shadow: inset 15px 15px 15px rgba(12, 233, 12, 0.333);
+        }
     </style>
 </head>
 <body>
-    <button id="inicio" onclick="newGame()">Start</button>
-    <canvas id="myCanvas" width="650" height="500"></canvas>
-    <span id ="hit"></span>
-    <span id ="danger"></span>
+    <div class="contenedor">
+        <h1 id="titulo">Shadow Ball</h1>
+        <button id="inicio" onclick="newGame()">Start</button>
+        <canvas id="myCanvas" width="650" height="500"></canvas>
+        <span id ="hit"></span>
+        <span id ="danger"></span>
+    </div>
     <script src="app.js"></script>
     
 </body>
