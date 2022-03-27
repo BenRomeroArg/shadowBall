@@ -117,15 +117,13 @@ function drawBall(){
         ctx.closePath();
 }
 
-function drawBall2(){
+function drawBallX(){
         ctx.beginPath();
         ctx.arc(x2,y2, ballRadius2, 0, Math.PI*2);
         ctx.fillStyle = "hsla(200,50%,70%,.222)";
         ctx.fill();
         ctx.closePath();
-}
-
-function drawBall3(){      
+   
         ctx.beginPath();
         ctx.arc(x3,y3, ballRadius3, 0, Math.PI*2);
         ctx.fillStyle = "hsla(250,70%,30%,.622)";
@@ -160,35 +158,27 @@ function drawBricks() {
         }
 }
     
-function drawScore() {
-        ctx.font = "28px Arial";
-        ctx.fillStyle = "#0095DD";
-        ctx.fillText("Puntos: "+(score*135), 8, 27);
-     
-}
-
-function drawHit() {
-        ctx.font ="28px Arial";
-        ctx.fillStyle ="#0095DD";
-        ctx.fillText("Hit: "+ brickHit, 8,53);
-}
-    
-function drawLives() {
-        ctx.font = "28px Arial";
-        ctx.fillStyle = "#0095DD";
-        ctx.fillText("Vidas: "+lives, canvas.width-115, 27);
+function drawText() {
+    ctx.font = "28px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Puntos: "+(score*135), 8, 27);
+        
+    ctx.font ="28px Arial";
+    ctx.fillStyle ="#0095DD";
+    ctx.fillText("Hit: "+ brickHit, 8,53);
+   
+    ctx.font = "28px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Vidas: "+lives, canvas.width-115, 27);
 }
 
 function draw() {
         ctx.clearRect(0,0,canvas.width,canvas.height);
         drawBricks();
         drawBall();
-        drawBall2();
-        drawBall3();
+        drawBallX();
         drawPaddle();
-        drawScore();
-        drawHit();
-        drawLives();
+        drawText();
         collisionDetection(); 
 
         if(x2 + dx2 > canvas.width-ballRadius2 || x2 + dx2 < ballRadius2) {
@@ -240,7 +230,7 @@ function draw() {
                 }
             
         }    
-        if(brickHit>=3){
+        if(brickHit>=4){
             ballRadius =15;
             ballRadius2 = 18;
             ballRadius3= 20;
@@ -285,11 +275,12 @@ function draw() {
         if(brickHit>=25){
             ballRadius= 10;
             ballRadius2= 14;
-            ballRadius3= 25;      
-            brickOffsetTop= 180;
+            ballRadius3= 20;      
+            brickOffsetTop= 80;
+            brickPadding=20;
         }    
-        if(brickHit>=27){
-            ballRadius=10;
+        if(brickHit>=26){
+            ballRadius=8;
             ballRadius2= 8;
             ballRadius3= 10; 
             brickOffsetTop= 80;
@@ -297,22 +288,40 @@ function draw() {
             brickPadding= 5;
             paddleWidth = 120;
         }
-        if(brickHit>=29){
+        if(brickHit>=28){
             
             ballRadius2= 14;  
             brickOffsetTop= 180; 
-            brickOffsetLeft=120;
-            brickPadding= 5;
-            
+            brickOffsetLeft=20;
+            brickPadding= 5;    
         }
-        if(brickHit>=32){
+        if(brickHit>=29){
            
             ballRadius2= 10;
             brickOffsetTop= 80;
-            brickOffsetLeft=90;
-            brickPadding= 30;
-          
-         
+            brickOffsetLeft=150;
+            brickPadding= 30;  
+        }
+        if(brickHit>=30){
+           
+            ballRadius2= 8;
+            brickOffsetTop= 120;
+            brickOffsetLeft=50;
+            brickPadding= 10;  
+        }
+        if(brickHit>=31){
+           
+            ballRadius2= 10;
+            brickOffsetTop= 180;
+            brickOffsetLeft=70;
+            brickPadding= 5; 
+        }
+        if(brickHit>=34){
+           
+            ballRadius2= 10;
+            brickOffsetTop= 150;
+            brickOffsetLeft=110;
+            brickPadding= 15; 
         }
        
         if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
