@@ -35,6 +35,10 @@ var score = 0;
 var lives = 3;
 const impacto = document.querySelector('#hit');
 const danger = document.querySelector('#danger');
+const izquierda = document.querySelector("#izquierda");
+const reinicio = document.querySelector('#reinicio');
+const derecha = document.querySelector("#derecha");
+
 var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
     bricks[c] = [];
@@ -42,10 +46,24 @@ for(c=0; c<brickColumnCount; c++) {
             bricks[c][r] = { x: 0, y: 0, status: 1 };
         }
 }
-
+reinicio.addEventListener('click',function(){
+    window.location.reload();
+})
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
+derecha.addEventListener('click', function(){
+    rightPressed=true;
+    leftPressed=false;
+    
+      
+});
+izquierda.addEventListener('click', function(){    
+    leftPressed=true;
+    rightPressed=false;
+    
+});
+
 function keyDownHandler(e) {
         if(e.keyCode == 39) {
             rightPressed = true;
@@ -261,21 +279,21 @@ function draw() {
         if(brickHit>=19){
             ballRadius= 8;
             ballRadius2= 14;
-            ballRadius3= 10;   
+            ballRadius3= 18;   
             brickOffsetTop= 180;
             brickOffsetLeft= 60;
             
         }
         if(brickHit>=23){
             ballRadius= 10;
-            ballRadius2= 24;
+            ballRadius2= 20;
             ballRadius3= 15;
             brickOffsetTop= 70;
         }
         if(brickHit>=25){
             ballRadius= 10;
-            ballRadius2= 14;
-            ballRadius3= 20;      
+            ballRadius2= 10;
+            ballRadius3= 15;      
             brickOffsetTop= 80;
             brickPadding=20;
         }    
@@ -290,14 +308,13 @@ function draw() {
         }
         if(brickHit>=28){
             
-            ballRadius2= 14;  
+            ballRadius2= 15;  
             brickOffsetTop= 180; 
             brickOffsetLeft=20;
             brickPadding= 5;    
         }
         if(brickHit>=29){
            
-            ballRadius2= 10;
             brickOffsetTop= 80;
             brickOffsetLeft=150;
             brickPadding= 30;  
@@ -355,10 +372,10 @@ function draw() {
                          
         } 
         if(rightPressed && paddleX < canvas.width-paddleWidth) {
-            paddleX += 9.5;
+            paddleX += 7.5;
         }
-        else if(leftPressed && paddleX > 0) {
-            paddleX -= 9.5;
+        else if(leftPressed && paddleX > canvas.width-paddleWidth) {
+            paddleX -= 7.5;
         }
         x3 += dx3;
         y3 += dy3;

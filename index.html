@@ -11,16 +11,24 @@
         .contenedor{
             margin-top: 1px; 
         }
-        #myCanvas { background: rgb(7, 0, 0); display: block; margin-top: 1px ; top:1px;}
-        @media (max-width:500px) {
+        #myCanvas {
+            background: rgb(7, 0, 0);
+            display: block;
+            margin-top: 1px ; 
+            top:1px;
+        }
+        @media (max-width:450px) {
             #myCanvas{
-                width: 360px;
-                height: 550px;
+                width: 375px;
+                height: 650px;
             }
             #danger{
                 left:10px;
                 top:400px;
                 font-size: 25px;
+            }
+            .controles{
+                width: 375px;
             }
             
         }
@@ -39,22 +47,12 @@
             font-size: 35px;
             font-weight: 700;
             left: 100px;
-            top: 495px;
+            top: 405px;
             color: red;
             position: fixed;
             opacity: 0.7;
         }
-        #inicio{
-            position: relative;
-            top:0px;
-            left:5px;
-            width: 50px;
-            height: 50px;
-            background-color: chartreuse;
-            font-size: medium;
-            color: black;
-            cursor: grab;
-        }
+       
         #titulo{
             height: 100px;
             width: 200px;
@@ -72,16 +70,42 @@
             color:rgba(192, 192, 192, 0.651);
             box-shadow: inset 18px 18px 18px 18px rgba(82, 247, 82, 0.397);
         }
+        .controles{
+            margin-top: 5px;
+            display: flex;
+            flex-direction: row;
+            background-color: darkgray;
+            width: 650px;
+
+        }
+        button{
+            margin-left: 18px;
+            position: sticky;
+            width: 72px;
+            height: 60px;
+            font-weight: 900;
+            font-size: 1.2em;
+            background-color: chartreuse;
+            text-align: center;
+            cursor: crosshair; 
+        }
+       
     </style>
 </head>
 <body>
     <div class="contenedor">
-       
-        <button id="inicio" onclick="newGame()">Start</button>
         <h1 id="titulo">Shadow Ball</h1>
         <canvas id="myCanvas" width="650" height="500"></canvas>
         <span id ="hit"></span>
         <span id ="danger"></span>
+       
+    </div>
+    <div class="controles">
+        <button id="izquierda">I</button>
+        <button id="inicio" onclick="newGame()">Start</button>
+        <button id="reinicio">R</button>
+        <button id="derecha">D</button>
+       
     </div>
     <script src="app.js"></script>
     
