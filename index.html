@@ -18,8 +18,7 @@
         #myCanvas {
             background: rgb(7, 0, 0);
             display: block;
-            margin-top: 1px ; 
-            
+            margin-top: 1px ;    
         }
         @media (max-width:550px) {
             #myCanvas{
@@ -48,6 +47,7 @@
                 align-content:space-between;
                 font-size: 2.2em;
             }
+           
             button{
                 margin-left: 5px;
                 left: 0px;
@@ -78,23 +78,25 @@
        
         #titulo{
             height: 120px;
-            width: 370px;
+            width: 270px;
             position: absolute;
-            align-content:space-between;
             align-items: center;
             justify-content: center;
             text-align: center;
             margin-top: 180px;
-            left: 40px;
+            left: 80px;
             padding-bottom: 0px;
-            padding-top: 50px;
-            font-size: 3.2em;
+            padding-top: 5px;
+            
+            font-size: 3.9em;
             font-family: 'Courier New', Courier, monospace;
         }
         #titulo:hover{
+            font-weight: 900;
+            transform: scale(1.5);
             border-radius: 20%;
-            color:rgba(192, 192, 192, 0.651);
-            box-shadow: inset 18px 18px 18px 18px rgb(5, 247, 5);
+            color:#0c0b0bde;
+            box-shadow: inset 18px 18px 18px 58px rgba(5, 247, 5, 0.74);
         }
         .controles{
             position: sticky;

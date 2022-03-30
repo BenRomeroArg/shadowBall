@@ -1,31 +1,31 @@
 
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var ballRadius = 10;
+var ballRadius = 12;
 var x = canvas.width/2;
 var y = canvas.height-30;
 var x2 = canvas.width/2;
 var y2 = canvas.height-30;
-var dx = 6;
-var dy = -6;
+var dx = 5;
+var dy = -5;
 var dx2 = 5.5;
 var dy2 = -5.5;
 var dx3 = 5.9;
 var dy3 = -5.9;
-var ballRadius2 = 12;
-var ballRadius3 = 14;
+var ballRadius2 = 15;
+var ballRadius3 = 17;
 var x2 = canvas.width/2;
 var y2 = canvas.height-30;
 var x3 = canvas.width/2;
 var y3 = canvas.height-30; 
-var paddleHeight = 30;
-var paddleWidth = 120;
+var paddleHeight = 35;
+var paddleWidth = 140;
 var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
 var brickColumnCount = 7;
 var brickRowCount = 5;
-var brickWidth = 52;
+var brickWidth = 55;
 var brickHeight = 35;
 var brickPadding = 10;
 var brickOffsetTop = 80;
@@ -39,6 +39,7 @@ const izquierda = document.querySelector("#izquierda");
 const reinicio = document.querySelector('#reinicio');
 const derecha = document.querySelector("#derecha");
 
+
 var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
     bricks[c] = [];
@@ -49,38 +50,36 @@ for(c=0; c<brickColumnCount; c++) {
 reinicio.addEventListener('click',function(){
     window.location.reload();
 })
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
+//document.addEventListener("keydown", keyDownHandler, false);
+//document.addEventListener("keyup", keyUpHandler, false);
 //document.addEventListener("mousemove", mouseMoveHandler, false);
 derecha.addEventListener('click', function(){
     rightPressed=true;
-    leftPressed=false;
-    
-      
+    leftPressed=false;         
 });
 izquierda.addEventListener('click', function(){    
-    leftPressed=true;
-    rightPressed=false;
+  leftPressed=true;
+   rightPressed=false;
     
 });
 
-function keyDownHandler(e) {
-        if(e.keyCode == 39) {
-            rightPressed = true;
-        }
-        else if(e.keyCode == 37) {
-            leftPressed = true;
-        }
-}
+//function keyDownHandler(e) {
+//        if(e.keyCode == 39) {
+//            rightPressed = true;
+//        }
+//        else if(e.keyCode == 37) {
+//          leftPressed = true;
+//        }
+//}
 
-function keyUpHandler(e) {
-        if(e.keyCode == 39) {
-           rightPressed = false;
-        }
-        else if(e.keyCode == 37) {
-            leftPressed = false;
-        }
-}
+//function keyUpHandler(e) {
+//        if(e.keyCode == 39) {
+//           rightPressed = false;
+//        }
+//        else if(e.keyCode == 37) {
+//            leftPressed = false;
+//        }
+//}
 
 //function mouseMoveHandler(e) {
 //        var relativeX = e.clientX - canvas.offsetLeft;
@@ -115,9 +114,10 @@ function collisionDetection() {
                              impacto.innerHTML="";
                              impacto.innerHTML;
                             },1100);
-
+                          
                         }   
                         if(brickHit == brickRowCount*brickColumnCount) {
+                        
                            alert("YOU WIN, eres lo maximo! SCORE: "+(brickHit*3000));
                             document.location.reload();
                         }
@@ -138,13 +138,13 @@ function drawBall(){
 function drawBallX(){
         ctx.beginPath();
         ctx.arc(x2,y2, ballRadius2, 0, Math.PI*2);
-        ctx.fillStyle = "hsla(200,50%,70%,.222)";
+        ctx.fillStyle = "rgba(5, 247, 5, .333)";
         ctx.fill();
         ctx.closePath();
    
         ctx.beginPath();
         ctx.arc(x3,y3, ballRadius3, 0, Math.PI*2);
-        ctx.fillStyle = "hsla(250,70%,30%,.622)";
+        ctx.fillStyle = "hsla(250,70%,30%,.322)";
         ctx.fill();
         ctx.closePath();          
                 
