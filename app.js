@@ -6,8 +6,8 @@ var x = canvas.width/2;
 var y = canvas.height-30;
 var x2 = canvas.width/2;
 var y2 = canvas.height-30;
-var dx = 5;
-var dy = -5;
+var dx = 6;
+var dy = -6;
 var dx2 = 5.5;
 var dy2 = -5.5;
 var dx3 = 5.9;
@@ -27,7 +27,7 @@ var brickColumnCount = 7;
 var brickRowCount = 5;
 var brickWidth = 55;
 var brickHeight = 35;
-var brickPadding = 10;
+var brickPadding = 13;
 var brickOffsetTop = 80;
 var brickOffsetLeft = 90;
 var brickHit = 0;
@@ -317,7 +317,7 @@ function draw() {
            
             brickOffsetTop= 80;
             brickOffsetLeft=150;
-            brickPadding= 30;  
+            brickPadding= 20;  
         }
         if(brickHit>=30){
            
@@ -337,7 +337,7 @@ function draw() {
            
             ballRadius2= 10;
             brickOffsetTop= 150;
-            brickOffsetLeft=110;
+            brickOffsetLeft=50;
             brickPadding= 15; 
         }
        

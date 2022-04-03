@@ -10,16 +10,18 @@
     	body{ 
             padding: 0; 
             margin: 1 0;
-            background-color: #a9a9a9;
+            background-image: url('fondo.png');
         }
         .contenedor{
             margin-top: 0px; 
         }
         #myCanvas {
-            background: rgb(7, 0, 0);
+            background-image: url('fondo.png');
             display: block;
-            margin-top: 1px ;    
+            margin-top: 1px ;
+            box-shadow: 6px -4px 4px 8px rgba(200, 209, 200, 0.371);
         }
+       
         @media (max-width:550px) {
             #myCanvas{
                 width: 425px;
@@ -38,14 +40,13 @@
                 padding-left: 5px;
                 
             }
-            #titulo{
-                margin-left: 5px;
-            
-                height: 100px;
-                width: 300px;
+            #titulo:hover{
+                
+                height: 400px;
+                width: 370px;
                 position: absolute;
                 align-content:space-between;
-                font-size: 2.2em;
+                font-size: 5.8em;
             }
            
             button{
@@ -77,27 +78,30 @@
         }
        
         #titulo{
-            height: 120px;
-            width: 270px;
+            height: 300px;
+            width: 520px;
             position: absolute;
             align-items: center;
             justify-content: center;
             text-align: center;
-            margin-top: 180px;
-            left: 80px;
-            padding-bottom: 0px;
-            padding-top: 5px;
-            
-            font-size: 3.9em;
+            margin-top: 40px;
+            left: 25px;
+            padding-top: 100px;
+            font-size: 6.9em;
             font-family: 'Courier New', Courier, monospace;
-        }
-        #titulo:hover{
             font-weight: 900;
-            transform: scale(1.5);
             border-radius: 20%;
             color:#0c0b0bde;
-            box-shadow: inset 18px 18px 18px 58px rgba(5, 247, 5, 0.74);
+            opacity: 0.1;
+        
+           
         }
+        #titulo:hover{
+            opacity: 0.9;
+            transition: 0.7s;  
+            box-shadow: inset 58px 58px 58px 188px rgba(5, 247, 5, 0.74);
+        }
+       
         .controles{
             position: sticky;
             display: flex;
